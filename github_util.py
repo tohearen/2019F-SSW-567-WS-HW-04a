@@ -11,9 +11,9 @@ def get_repo_dict(user_id: str) -> dict:
     return repo_dict
 
 
-def print_pretty_repo_table(user_id: str, repo_dict: dict):
+def print_pretty_repo_table(user_id: str, repo_dict: dict, description: str):
     repo_table = PrettyTable()
     repo_table.field_names = ["Repo Name", "Number of Commits"]
     for repo_name in repo_dict:
         repo_table.add_row([repo_name, repo_dict[repo_name]])
-    print("\nRepo Report For User '" + user_id + "'\n" + repo_table.get_string())
+    print("\n" + description + " Repo Report For User '" + user_id + "'\n" + repo_table.get_string())

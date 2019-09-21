@@ -15,9 +15,8 @@ import github_util
     ],
 )
 def test_get_repos(user_id, expected_repos):
+    github_util.print_pretty_repo_table(user_id, expected_repos, "Expected")
     actual_repos = github_util.get_repo_dict(user_id)
-
+    github_util.print_pretty_repo_table(user_id, actual_repos, "Actual")
     for repo_name in expected_repos:
         assert actual_repos[repo_name] >= expected_repos[repo_name]
-
-    github_util.print_pretty_repo_table(user_id, actual_repos)
