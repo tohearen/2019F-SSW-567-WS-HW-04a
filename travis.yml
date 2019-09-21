@@ -2,7 +2,7 @@ language: python
 python:
   - "3.5"
 install:
-  - pip install PTable
+  - pip3 install PTable
   - pip install PyGithub
 script:
-  - python -m pytest
+  - python -m pytest test_github_util.py
