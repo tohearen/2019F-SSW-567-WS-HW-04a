@@ -1,9 +1,7 @@
-from github import Github
 from prettytable import PrettyTable
 
 
-def get_repo_dict(user_id: str) -> dict:
-    client = Github()
+def get_repo_dict(user_id: str, client) -> dict:
     user = client.get_user(user_id)
     repo_dict = {}
     for repo in user.get_repos():
