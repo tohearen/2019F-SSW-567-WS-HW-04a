@@ -28,7 +28,7 @@ def test_get_mock_repos(user_id, expected_repos):
     assert_get_repos(user_id, expected_repos, MockGithub(expected_repos))
 
 
-# This test connects to Github
+@pytest.mark.skip(reason="This test connects to an external dependency")
 @pytest.mark.parametrize(
     "user_id, expected_repos",
     [
